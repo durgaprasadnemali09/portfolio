@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nemali Durga Prasad Reddy | Software Engineer Portfolio</title>
+<meta name="description" content="Portfolio of Nemali Durga Prasad Reddy, Associate Software Engineer at Technomold IT Solutions. Java, Spring Boot, SQL and web development.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#080D1C}
+html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+.lift{transition:opacity .2s}
+.lift:hover{opacity:.85}
+.btn{transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 32px -10px var(--accent,#22D3EE)}
+.card{background:#111936;border:1px solid #243056;border-radius:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 24px 40px -24px rgba(0,0,0,.8);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .45s;transform-style:preserve-3d}
+.card:hover{transform:perspective(1100px) rotateX(5deg) rotateY(-7deg) translateY(-12px);border-color:var(--accent,#22D3EE);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 40px 60px -24px rgba(0,0,0,.9),0 0 40px -10px var(--accent,#22D3EE)}
+.pop{transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.card:hover .pop{transform:translateZ(60px) scale(1.12)}
+.chip{padding:8px 16px;background:#0C1430;border:1px solid #2A3866;border-radius:999px;font-size:15px;font-weight:500;color:#E8ECF8;transition:transform .25s,border-color .25s}
+.chip:hover{transform:translateY(-4px);border-color:var(--accent,#22D3EE)}
+.tag{padding:6px 12px;background:#0C1430;border:1px solid #2A3866;border-radius:999px;font-size:13px;font-weight:500;color:#C7D0E8}
+
+@keyframes floatPhoto{0%,100%{transform:rotateY(-10deg) rotateX(4deg) translateY(0)}50%{transform:rotateY(10deg) rotateX(-3deg) translateY(-16px)}}
+@keyframes floatChip{0%,100%{transform:translateY(0) translateZ(40px)}50%{transform:translateY(-14px) translateZ(40px)}}
+@keyframes spinCube{0%{transform:rotateX(-24deg) rotateY(0deg)}100%{transform:rotateX(-24deg) rotateY(360deg)}}
+@keyframes gridMove{0%{background-position:0 0}100%{background-position:0 60px}}
+@keyframes orb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.15)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes rise{0%{opacity:0;transform:translateY(40px) rotateX(12deg)}100%{opacity:1;transform:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.7)}100%{box-shadow:0 0 0 12px rgba(52,211,153,0)}}
+@keyframes shine{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+
+.in1{animation:rise .9s .1s cubic-bezier(.2,.8,.2,1) both}
+.in2{animation:rise .9s .3s cubic-bezier(.2,.8,.2,1) both}
+.in3{animation:rise .9s .5s cubic-bezier(.2,.8,.2,1) both}
+.in4{animation:rise .9s .7s cubic-bezier(.2,.8,.2,1) both}
+.in5{animation:rise .9s .9s cubic-bezier(.2,.8,.2,1) both}
+.stage{perspective:1200px}
+.photo3d{transform-style:preserve-3d;animation:floatPhoto 9s ease-in-out infinite}
+.fchip{position:absolute;padding:10px 18px;background:rgba(17,25,54,.92);border:1px solid #2A3866;border-radius:14px;font-weight:600;font-size:14px;color:#E8ECF8;box-shadow:0 18px 30px -12px rgba(0,0,0,.8);animation:floatChip 6s ease-in-out infinite}
+.scene{perspective:1000px;width:220px;height:220px;margin:60px auto}
+.cube{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:spinCube 20s linear infinite}
+.face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;color:#E8ECF8;background:rgba(17,25,54,.85);border:2px solid var(--accent,#22D3EE);box-shadow:inset 0 0 40px rgba(34,211,238,.18)}
+.f1{transform:rotateY(0deg) translateZ(110px)}
+.f2{transform:rotateY(90deg) translateZ(110px)}
+.f3{transform:rotateY(180deg) translateZ(110px)}
+.f4{transform:rotateY(-90deg) translateZ(110px)}
+.f5{transform:rotateX(90deg) translateZ(110px)}
+.f6{transform:rotateX(-90deg) translateZ(110px)}
+.floor{position:absolute;left:-20%;right:-20%;bottom:-40px;height:420px;transform:perspective(500px) rotateX(62deg);transform-origin:bottom;background-image:linear-gradient(rgba(34,211,238,.28) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.28) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 3s linear infinite;opacity:.55;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:orb 14s ease-in-out infinite}
+.track{display:flex;width:max-content;animation:marquee 28s linear infinite}
+.dot{width:12px;height:12px;border-radius:50%;background:#34D399;animation:pulse 1.8s ease-out infinite}
+.shine{background:linear-gradient(90deg,#E8ECF8,#22D3EE,#A78BFA,#E8ECF8);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@keyframes blink{50%{opacity:0}}
+.caret{display:inline-block;width:10px;height:1.1em;background:var(--accent,#22D3EE);margin-left:4px;vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+.code{background:#0A1022;border:1px solid #2A3866;border-radius:20px;box-shadow:0 40px 70px -24px rgba(0,0,0,.9),0 0 60px -20px var(--accent,#22D3EE)}
+.progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:30;background:var(--accent,#22D3EE);transform-origin:0 50%;transform:scaleX(0)}
+@keyframes grow{to{transform:scaleX(1)}}
+@supports (animation-timeline:scroll()){.progress{animation:grow linear both;animation-timeline:scroll(root)}}
+@supports (animation-timeline:view()){
+.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+}
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+}
+</style>
+
+</head>
+<body>
+
+<div style="--accent:#22D3EE;background:#080D1C;color:#E8ECF8;font-family:'Inter',system-ui,sans-serif;width:100%;box-sizing:border-box;overflow-x:clip">
+
+<div class="progress" aria-hidden="true"></div>
+<!-- NAV -->
+<div style="position:sticky;top:0;z-index:20;background:rgba(8,13,28,.75);backdrop-filter:blur(14px);border-bottom:1px solid #1B2547">
+<div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between;box-sizing:border-box">
+<a class="lift" href="#top" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;display:flex;align-items:center;gap:10px">
+<span style="width:40px;height:40px;border-radius:12px;background:#22D3EE;color:#04121A;display:flex;align-items:center;justify-content:center;font-size:16px">DP</span>
+<span>Durga Prasad</span>
+</a>
+<div style="display:flex;flex-wrap:wrap;gap:2px 22px;align-items:center;font-size:15px;font-weight:500;color:#C7D0E8">
+<a class="lift" href="#about" style="padding:12px 0">About</a>
+<a class="lift" href="#skills" style="padding:12px 0">Skills</a>
+<a class="lift" href="#projects" style="padding:12px 0">Projects</a>
+<a class="lift" href="#experience" style="padding:12px 0">Experience</a>
+<a class="lift" href="#education" style="padding:12px 0">Education</a>
+<a class="btn" href="#contact" style="padding:11px 22px;background:#22D3EE;color:#04121A;border-radius:999px;font-weight:600">Hire me</a>
+</div>
+</div>
+</div>
+
+<!-- HERO -->
+<div id="top" style="position:relative;overflow:hidden">
+<div class="orb" style="width:420px;height:420px;background:#8B5CF6;opacity:.35;top:-80px;right:-60px"></div>
+<div class="orb" style="width:360px;height:360px;background:#22D3EE;opacity:.22;bottom:40px;left:-100px;animation-delay:-6s"></div>
+<div class="floor"></div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:72px 24px 120px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:64px;align-items:center">
+<div style="flex:1.4 1 420px;min-width:0;display:flex;flex-direction:column;gap:28px">
+<div class="in1" style="display:inline-flex;align-self:flex-start;align-items:center;gap:12px;padding:9px 18px;background:rgba(17,25,54,.9);border:1px solid #2A3866;border-radius:999px;font-size:14px;font-weight:500">
+<span class="dot"></span>
+<span>Open to freelance and new projects</span>
+</div>
+<div class="in2 mono" style="font-size:20px;font-weight:500;color:#22D3EE">&gt; <span id="typed"></span><span class="caret"></span></div>
+<h1 class="in2" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,6.2vw,74px);line-height:1.04;letter-spacing:-0.03em">I build fast, reliable web apps with <span class="shine">Java and Spring Boot.</span></h1>
+<p class="in3" style="margin:0;font-size:19px;line-height:1.65;color:#A3AEC8;max-width:600px">Hi, I'm Nemali Durga Prasad Reddy, an Associate Software Engineer at Technomold IT Solutions. I turn ideas into clean, user-friendly software, from the interface to the database.</p>
+<div class="in4" style="display:flex;flex-wrap:wrap;gap:14px">
+<a class="btn" href="#projects" style="padding:16px 30px;background:#22D3EE;color:#04121A;border-radius:999px;font-weight:600;font-size:16px">View my projects</a>
+<a class="btn" href="#contact" style="padding:14px 28px;border:2px solid #2A3866;border-radius:999px;font-weight:600;font-size:16px">Contact me</a>
+</div>
+<div class="in5" style="display:flex;flex-wrap:wrap;gap:28px 48px;padding-top:12px">
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700">Java</div><div style="font-size:14px;color:#A3AEC8">Primary language</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700">B.Tech CSE</div><div style="font-size:14px;color:#A3AEC8">Karunya University, 2025</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700">Full stack</div><div style="font-size:14px;color:#A3AEC8">Frontend to database</div></div>
+</div>
+</div>
+<div class="stage in3" style="flex:1 1 300px;min-width:0;display:flex;justify-content:center">
+<div style="width:100%;max-width:400px;position:relative;transform-style:preserve-3d">
+<div class="photo3d">
+<div style="position:absolute;inset:24px -24px -24px 24px;border-radius:32px;background:#22D3EE;opacity:.28;transform:translateZ(-40px)"></div>
+<img src="images/photo.jpg" alt="Portrait of Nemali Durga Prasad Reddy" style="position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:32px;display:block;background:#111936;border:1px solid #2A3866;box-shadow:0 40px 70px -20px rgba(0,0,0,.9)">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- MARQUEE -->
+<div style="border-top:1px solid #1B2547;border-bottom:1px solid #1B2547;background:#0B1226;overflow:hidden">
+<div class="track" aria-hidden="true" style="padding:22px 0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;color:#A3AEC8;gap:48px">
+<span>Java</span><span>·</span><span>Spring Boot</span><span>·</span><span>Python</span><span>·</span><span>SQL</span><span>·</span><span>HTML</span><span>·</span><span>CSS</span><span>·</span><span>JavaScript</span><span>·</span>
+<span>Java</span><span>·</span><span>Spring Boot</span><span>·</span><span>Python</span><span>·</span><span>SQL</span><span>·</span><span>HTML</span><span>·</span><span>CSS</span><span>·</span><span>JavaScript</span><span>·</span>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+<div style="max-width:1200px;margin:0 auto;padding:104px 24px 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:56px;align-items:center">
+<div class="reveal" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:24px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#22D3EE">About</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-0.02em">More than just code</h2>
+<p style="margin:0;font-size:18px;line-height:1.7;color:#A3AEC8">I'm a quick learner who takes responsibility, works hard and stays calm when plans change. I enjoy building across the stack, from clean interfaces to Spring Boot services and SQL databases.</p>
+<p style="margin:0;font-size:18px;line-height:1.7;color:#A3AEC8">Outside of coding, I was an active member of the Nature Club at Karunya University, taking part in community service and leadership activities.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px"><span class="chip">Responsible</span><span class="chip">Quick learner</span><span class="chip">Hardworking</span><span class="chip">Confident</span><span class="chip">Adaptable</span></div>
+</div>
+<div class="stage reveal" style="flex:1 1 420px;min-width:0">
+<div class="code mono" aria-hidden="true">
+<div style="display:flex;align-items:center;gap:8px;padding:16px 20px;border-bottom:1px solid #1B2547"><span style="width:12px;height:12px;border-radius:50%;background:#F87171"></span><span style="width:12px;height:12px;border-radius:50%;background:#FBBF24"></span><span style="width:12px;height:12px;border-radius:50%;background:#34D399"></span><span style="margin-left:12px;font-size:13px;color:#8A97B4">Developer.java</span></div>
+<div style="padding:24px;font-size:14px;line-height:1.85;color:#E8ECF8;overflow-x:auto">
+<div style="white-space:pre"><span style="color:#C4B5FD">public class</span> <span style="color:#FBBF24">Developer</span> {</div>
+<div style="white-space:pre">    String name = <span style="color:#34D399">"Durga Prasad Reddy"</span>;</div>
+<div style="white-space:pre">    String role = <span style="color:#34D399">"Associate Software Engineer"</span>;</div>
+<div style="white-space:pre">    String company = <span style="color:#34D399">"Technomold IT Solutions"</span>;</div>
+<div style="white-space:pre">    String[] stack = { <span style="color:#34D399">"Java"</span>, <span style="color:#34D399">"Spring Boot"</span>, <span style="color:#34D399">"SQL"</span> };</div>
+<div style="white-space:pre">    <span style="color:#C4B5FD">boolean</span> quickLearner = <span style="color:#C4B5FD">true</span>;</div>
+<div style="white-space:pre;color:#8A97B4">    // always building something new</div>
+<div style="white-space:pre">    <span style="color:#C4B5FD">void</span> build() { ship(); }</div>
+<div style="white-space:pre">}<span class="caret"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills">
+<div style="max-width:1200px;margin:0 auto;padding:104px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:32px">
+<div class="reveal" style="display:flex;flex-direction:column;gap:12px;max-width:640px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#22D3EE">Skills</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-0.02em">The tools I use to ship</h2>
+</div>
+<div class="scene" aria-hidden="true">
+<div class="cube">
+<div class="face f1">Java</div>
+<div class="face f2">Spring</div>
+<div class="face f3">SQL</div>
+<div class="face f4">JS</div>
+<div class="face f5">HTML</div>
+<div class="face f6">CSS</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px">Languages</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">Java</span><span class="chip">Python</span></div>
+</div>
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px">Frontend</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+</div>
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px">Backend</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">Spring Boot</span></div>
+</div>
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px">Databases</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">SQL</span><span class="chip">Microsoft SQL Server</span></div>
+</div>
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:20px">Tools</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">Eclipse</span><span class="chip">IntelliJ IDEA</span><span class="chip">Visual Studio</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" style="background:#0B1226;border-top:1px solid #1B2547;border-bottom:1px solid #1B2547">
+<div style="max-width:1200px;margin:0 auto;padding:104px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+<div class="reveal" style="display:flex;flex-direction:column;gap:12px;max-width:640px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#22D3EE">Projects</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-0.02em">Things I've built</h2>
+</div>
+<div class="stage" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px">
+
+<div class="card reveal" style="padding:20px;display:flex;flex-direction:column;gap:22px">
+<div style="height:190px;border-radius:16px;background:#0C1430;border:1px solid #2A3866;display:flex;align-items:center;justify-content:center;color:#22D3EE">
+<div class="pop"><svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"></path><path d="M4 21V5"></path><path d="M9 8h6"></path><path d="M9 12h6"></path></svg></div>
+</div>
+<div style="padding:4px 10px 10px;display:flex;flex-direction:column;gap:14px;flex:1">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A3AEC8">Web platform · Developer</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px">E-Reading</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">A digital reading platform for accessing and reading electronic content. It includes adjustable font size, bookmarking and dark mode for better readability, built with a Spring Boot backend.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+<a class="lift" href="https://github.com/durgaprasadnemali09" target="_blank" rel="noopener" style="margin-top:auto;padding-top:8px;font-weight:600;font-size:15px;color:#22D3EE">View on GitHub →</a>
+</div>
+</div>
+
+<div class="card reveal" style="padding:20px;display:flex;flex-direction:column;gap:22px">
+<div style="height:190px;border-radius:16px;background:#0C1430;border:1px solid #2A3866;display:flex;align-items:center;justify-content:center;color:#34D399">
+<div class="pop"><svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path><path d="M12 15v2"></path></svg></div>
+</div>
+<div style="padding:4px 10px 10px;display:flex;flex-direction:column;gap:14px;flex:1">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A3AEC8">Web app · Developer</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px">Password Generator</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">A responsive password generator where users choose length and character types (uppercase, lowercase, numbers, symbols). Real-time UI features help avoid common patterns and improve security.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+<a class="lift" href="https://github.com/durgaprasadnemali09" target="_blank" rel="noopener" style="margin-top:auto;padding-top:8px;font-weight:600;font-size:15px;color:#22D3EE">View on GitHub →</a>
+</div>
+</div>
+
+<div class="card reveal" style="padding:20px;display:flex;flex-direction:column;gap:22px">
+<div style="height:190px;border-radius:16px;background:#0C1430;border:1px solid #2A3866;display:flex;align-items:center;justify-content:center;color:#FBBF24">
+<div class="pop"><svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5"></path><path d="m16 7 5 5-5 5"></path><path d="m14 4-4 16"></path></svg></div>
+</div>
+<div style="padding:4px 10px 10px;display:flex;flex-direction:column;gap:14px;flex:1">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A3AEC8">Backend API · Developer</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px">Student Management System</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">A Spring Boot REST API for managing student records, courses and enrolments, with a simple HTML, CSS and JavaScript dashboard. It supports create, search, update and delete, input validation and data stored in SQL Server.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">SQL Server</span><span class="tag">REST API</span><span class="tag">JavaScript</span></div>
+<a class="lift" href="https://github.com/durgaprasadnemali09" target="_blank" rel="noopener" style="margin-top:auto;padding-top:8px;font-weight:600;font-size:15px;color:#22D3EE">View on GitHub →</a>
+</div>
+</div>
+
+<div class="card reveal" style="padding:20px;display:flex;flex-direction:column;gap:22px">
+<div style="height:190px;border-radius:16px;background:#0C1430;border:1px solid #2A3866;display:flex;align-items:center;justify-content:center;color:#A78BFA">
+<div class="pop"><svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path><path d="m3 17 9 5 9-5"></path></svg></div>
+</div>
+<div style="padding:4px 10px 10px;display:flex;flex-direction:column;gap:14px;flex:1">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A3AEC8">Full stack web app · Developer</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px">Expense Tracker</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">A personal finance app to log income and expenses, sort them into categories and see monthly totals at a glance. The responsive interface talks to a Spring Boot backend and SQL database, and works on phones and desktops.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">SQL</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+<a class="lift" href="https://github.com/durgaprasadnemali09" target="_blank" rel="noopener" style="margin-top:auto;padding-top:8px;font-weight:600;font-size:15px;color:#22D3EE">View on GitHub →</a>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience">
+<div style="max-width:1200px;margin:0 auto;padding:104px 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:48px">
+<div class="reveal" style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#22D3EE">Experience</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-0.02em">Where I've worked</h2>
+</div>
+<div class="stage" style="flex:2 1 460px;min-width:0;display:flex;flex-direction:column;gap:22px">
+
+<div class="card reveal" style="padding:32px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:baseline">
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px">Associate Software Engineer</h3>
+<span style="font-size:14px;font-weight:600;color:#22D3EE">[Start month, year] to Present</span>
+</div>
+<div style="font-size:16px;font-weight:500;color:#C7D0E8">Technomold IT Solutions</div>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">[Describe what you build at work: the products, the technologies you use daily and one result you are proud of.]</p>
+</div>
+
+<div class="card reveal" style="padding:32px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:baseline">
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px">Front End Web Development Intern</h3>
+<span style="font-size:14px;font-weight:600;color:#22D3EE">[Dates]</span>
+</div>
+<div style="font-size:16px;font-weight:500;color:#C7D0E8">[Company or program name]</div>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">Hands-on internship building responsive interfaces with HTML, CSS and JavaScript.</p>
+</div>
+
+<div class="card reveal" style="padding:32px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:baseline">
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px">Cybersecurity Intern</h3>
+<span style="font-size:14px;font-weight:600;color:#22D3EE">[Dates]</span>
+</div>
+<div style="font-size:16px;font-weight:500;color:#C7D0E8">Cisco</div>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">Internship covering the fundamentals of cybersecurity.</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- EDUCATION -->
+<div id="education" style="background:#0B1226;border-top:1px solid #1B2547;border-bottom:1px solid #1B2547">
+<div style="max-width:1200px;margin:0 auto;padding:104px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+<div class="reveal" style="display:flex;flex-direction:column;gap:12px;max-width:640px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#22D3EE">Education</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-0.02em">Education and certifications</h2>
+</div>
+<div class="stage" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px">
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#22D3EE">2021 to 2025 · CGPA 7.1</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px">B.Tech, Computer Science Engineering</h3>
+<div style="font-size:15px;color:#A3AEC8">Karunya University, Coimbatore, Tamil Nadu</div>
+</div>
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#22D3EE">2019 to 2021 · CGPA 9.2</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px">Intermediate Education</h3>
+<div style="font-size:15px;color:#A3AEC8">Sri Chaitanya Junior College, Andhra Pradesh</div>
+</div>
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#22D3EE">2018 to 2019 · CGPA 9.8</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px">Secondary Education</h3>
+<div style="font-size:15px;color:#A3AEC8">Sri Chaitanya Techno School</div>
+</div>
+<div class="card reveal" style="padding:28px;display:flex;flex-direction:column;gap:8px;background:#1A1445;border-color:#4B3A9A">
+<div style="font-size:14px;font-weight:600;color:#C4B5FD">Certification</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px">Front End Web Development</h3>
+<div style="font-size:15px;color:#C7D0E8">[Add issuer and year]</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SERVICES -->
+<div id="services">
+<div style="max-width:1200px;margin:0 auto;padding:104px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+<div class="reveal" style="display:flex;flex-direction:column;gap:12px;max-width:640px">
+<div style="font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#22D3EE">Services</div>
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-0.02em">How I can help your business</h2>
+</div>
+<div class="stage" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+<div class="card reveal" style="padding:32px;display:flex;flex-direction:column;gap:12px">
+<div class="pop" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:#22D3EE">01</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px">Responsive websites</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">Clean, fast sites that look right on phones, tablets and desktops, built with HTML, CSS and JavaScript.</p>
+</div>
+<div class="card reveal" style="padding:32px;display:flex;flex-direction:column;gap:12px">
+<div class="pop" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:#22D3EE">02</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px">Backend and APIs</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">Java and Spring Boot services that connect your app to its data, backed by SQL databases.</p>
+</div>
+<div class="card reveal" style="padding:32px;display:flex;flex-direction:column;gap:12px">
+<div class="pop" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:#22D3EE">03</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px">Web apps end to end</h3>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#A3AEC8">From idea to working product: interface, logic and data in one place, with clear communication along the way.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PROCESS + TESTIMONIAL -->
+<div style="background:#0B1226;border-top:1px solid #1B2547;border-bottom:1px solid #1B2547">
+<div style="max-width:1200px;margin:0 auto;padding:104px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:40px">
+<h2 class="reveal" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:44px;line-height:1.1;letter-spacing:-0.02em">How we'll work together</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px">
+<div class="reveal" style="display:flex;flex-direction:column;gap:10px"><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:#22D3EE">1</div><h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600">Discuss</h3><p style="margin:0;font-size:15px;line-height:1.6;color:#A3AEC8">We talk through your goals, users and timeline.</p></div>
+<div class="reveal" style="display:flex;flex-direction:column;gap:10px"><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:#22D3EE">2</div><h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600">Plan</h3><p style="margin:0;font-size:15px;line-height:1.6;color:#A3AEC8">You get a clear scope, schedule and quote.</p></div>
+<div class="reveal" style="display:flex;flex-direction:column;gap:10px"><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:#22D3EE">3</div><h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600">Build</h3><p style="margin:0;font-size:15px;line-height:1.6;color:#A3AEC8">I build in stages and share progress regularly.</p></div>
+<div class="reveal" style="display:flex;flex-direction:column;gap:10px"><div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:#22D3EE">4</div><h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600">Launch</h3><p style="margin:0;font-size:15px;line-height:1.6;color:#A3AEC8">We test together, launch, and I stay available for fixes.</p></div>
+</div>
+</div>
+<div class="stage">
+<div class="card reveal" style="padding:44px;display:flex;flex-direction:column;gap:20px;max-width:820px">
+<p style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:26px;line-height:1.4;font-weight:500">"[Paste a short testimonial from a manager, colleague or client here.]"</p>
+<div style="font-size:15px;color:#A3AEC8">[Name], [Role], [Company]</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" style="position:relative;overflow:hidden">
+<div class="orb" style="width:420px;height:420px;background:#8B5CF6;opacity:.3;top:-60px;left:-80px"></div>
+<div class="orb" style="width:380px;height:380px;background:#22D3EE;opacity:.25;bottom:-100px;right:-60px;animation-delay:-7s"></div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:104px 24px 40px;box-sizing:border-box;display:flex;flex-direction:column;gap:32px">
+<h2 class="reveal" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(36px,6vw,72px);line-height:1.05;letter-spacing:-0.03em;max-width:820px">Have a project in mind? <span class="shine">Let's talk.</span></h2>
+<p style="margin:0;font-size:19px;line-height:1.65;color:#A3AEC8;max-width:560px">Send me a short note about what you need and I'll reply within a day or two.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px">
+<a class="btn" href="mailto:durgaprasadnemali09@gmail.com" style="padding:16px 30px;background:#22D3EE;color:#04121A;border-radius:999px;font-weight:600;font-size:16px">durgaprasadnemali09@gmail.com</a>
+<a class="btn" href="tel:+919391510472" style="padding:14px 28px;border:2px solid #2A3866;border-radius:999px;font-weight:600;font-size:16px">+91 93915 10472</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;font-size:16px;font-weight:500;color:#C7D0E8">
+<a class="lift" href="https://www.linkedin.com/in/durga-prasad-reddy-b5b63523a/" target="_blank" rel="noopener" style="padding:12px 0">LinkedIn</a>
+<a class="lift" href="https://github.com/durgaprasadnemali09" target="_blank" rel="noopener" style="padding:12px 0">GitHub</a>
+<a class="lift" href="resume.pdf" download="Durga-Prasad-Reddy-Resume.pdf" style="padding:12px 0">Download my resume</a>
+</div>
+<div style="border-top:1px solid #1B2547;margin-top:24px;padding-top:24px;font-size:14px;color:#A3AEC8">© 2026 Nemali Durga Prasad Reddy. All rights reserved.</div>
+</div>
+</div>
+
+</div>
+
+<script>
+(function(){
+var roles=['Java developer','Spring Boot engineer','Full stack builder','Problem solver'];
+var el=document.getElementById('typed');
+if(!el)return;
+var ri=0,ci=0,del=false,hold=0;
+setInterval(function(){
+var r=roles[ri];
+if(hold>0){hold--;return;}
+if(!del){ci++;el.textContent=r.slice(0,ci);if(ci===r.length){hold=14;del=true;}}
+else{ci--;el.textContent=r.slice(0,ci);if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+},110);
+})();
+</script>
+</body>
+</html>

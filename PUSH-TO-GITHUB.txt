@@ -1,0 +1,34 @@
+PUSH THIS TO GITHUB (step by step)
+==================================
+
+1) Create an EMPTY repository on GitHub
+   - Go to github.com/new
+   - Repository name: portfolio   (or <your-username>.github.io for a main site)
+   - Public, and do NOT add a README, .gitignore or licence (they are already here)
+   - Click "Create repository"
+
+2) In this folder, open a terminal (VS Code: Terminal > New Terminal) and run:
+
+   git init
+   git add .
+   git commit -m "Add portfolio website"
+   git branch -M main
+   git remote add origin https://github.com/durgaprasadnemali09/portfolio.git
+   git push -u origin main
+
+   (If you named the repo something else, change "portfolio" in the URL.)
+   If asked to sign in, use your GitHub account. If a password is requested,
+   use a Personal Access Token (GitHub > Settings > Developer settings).
+
+3) Turn on the live website
+   Repo > Settings > Pages > Source: "Deploy from a branch"
+   Branch: main, folder: / (root) > Save.
+   Your site: https://durgaprasadnemali09.github.io/portfolio/
+
+4) Later changes
+   git add .
+   git commit -m "Update portfolio"
+   git push
+
+TIP: Using your repo named durgaprasadnemali09.github.io gives the shorter
+address https://durgaprasadnemali09.github.io/
